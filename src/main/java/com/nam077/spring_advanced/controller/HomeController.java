@@ -5,6 +5,8 @@ import org.springframework.context.MessageSource;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.nam077.spring_advanced.exception.UnauthorizedException;
+
 import java.util.Locale;
 
 @RestController
@@ -15,6 +17,6 @@ public class HomeController {
 
     @GetMapping("/greet")
     public String greet(Locale locale) {
-        return messageSource.getMessage("welcome.message", null, locale);
+        throw new UnauthorizedException(messageSource.getMessage("error.resource.not.found", null, locale));
     }
 }
