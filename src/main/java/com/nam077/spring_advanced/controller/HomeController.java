@@ -17,6 +17,6 @@ public class HomeController {
 
     @GetMapping("/greet")
     public String greet(Locale locale) {
-        throw new UnauthorizedException(messageSource.getMessage("error.resource.not.found", null, locale));
+        throw new UnauthorizedException(messageSource.getMessage("error.resource.not.found", new Object[] { "User" }, locale));
     }
 }

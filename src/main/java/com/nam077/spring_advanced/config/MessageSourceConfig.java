@@ -1,8 +1,5 @@
 package com.nam077.spring_advanced.config;
 
-import java.util.Arrays;
-import java.util.Locale;
-
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
