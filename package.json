@@ -12,7 +12,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@commitlint/cli": "^19.5.0"
+    "@commitlint/cli": "^19.5.0",
+    "spring-advanced": "file:"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^19.5.0",

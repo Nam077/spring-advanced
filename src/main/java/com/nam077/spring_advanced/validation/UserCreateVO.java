@@ -12,8 +12,8 @@ public class UserCreateVO {
 
 
     @Schema(description = "User creation request object", example = "John Doe")
-    @NotBlank(message = "{user.validation.username.required}")
-    private String username;
+    @NotBlank(message = "{user.validation.name.required}")
+    private String name;
 
     @Schema(description = "User password", example = "password")
     @NotBlank(message = "{user.validation.password.required}")

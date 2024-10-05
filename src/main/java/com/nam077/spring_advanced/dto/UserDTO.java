@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 public class UserDTO {
     private UUID id;
-    private String username;
+    private String name;
     private String password;
     private String email;
     private Boolean deleted;

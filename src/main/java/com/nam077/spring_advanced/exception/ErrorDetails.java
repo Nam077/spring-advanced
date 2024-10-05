@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-import lombok.Data;
 
 @Data
 @NoArgsConstructor
@@ -14,8 +13,6 @@ import lombok.Data;
 class FieldErrorDetail {
     private String field;
     private String message;
-
-  
 }
 
 /**
@@ -26,11 +23,25 @@ class FieldErrorDetail {
  */
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class ErrorDetails {
     private int statusCode;
     private String message;
-    private List<FieldErrorDetail> details; // Thay đổi từ List<String> thành List<FieldErrorDetail>
+    private List<FieldErrorDetail> errors; // Thay đổi từ List<String> thành List<FieldErrorDetail>
     private long timestamp;
     private String path;
+
+    public ErrorDetails(int statusCode, String message, List<FieldErrorDetail> errors, long timestamp, String path) {
+        this.statusCode = statusCode;
+        this.message = message;
+        this.errors = errors;
+        this.timestamp = timestamp;
+        this.path = path;
+    }
+
+    public ErrorDetails(int statusCode, String message, long timestamp, String path) {
+        this.statusCode = statusCode;
+        this.message = message;
+        this.timestamp = timestamp;
+        this.path = path;
+    }
 }

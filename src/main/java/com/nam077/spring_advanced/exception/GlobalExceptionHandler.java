@@ -175,6 +175,20 @@ public class GlobalExceptionHandler {
         return errorDetails;
     }
 
+    //conflic
+    @ExceptionHandler(ConflictException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    @ResponseBody
+    public ErrorDetails handleConflict(ConflictException ex, WebRequest request) {
+        ErrorDetails errorDetails = new ErrorDetails();
+        errorDetails.setStatusCode(HttpStatus.CONFLICT.value());
+        errorDetails.setMessage("Conflict");
+        errorDetails.setDetails(List.of(new FieldErrorDetail("conflict", ex.getMessage())));
+        errorDetails.setTimestamp(System.currentTimeMillis());
+        errorDetails.setPath(request.getDescription(false));
+        return errorDetails;
+    }
+
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ResponseBody
